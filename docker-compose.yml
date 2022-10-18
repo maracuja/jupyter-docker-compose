@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  jupyter:
+    container_name: jupyter
+    build: .
+    command: jupyter lab --allow-root --ip="0.0.0.0"
+    volumes:
+      - .aws:/root/.aws
+      - ./:/code
+    ports:
+      - "8888:8888"
+
+volumes:
+  data01:
+    driver: local
