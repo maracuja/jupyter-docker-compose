@@ -1,11 +1,15 @@
-# jupyter-stacks
+# Jupyter Docker Compose
 
 ### Intro
 
-Downloaded from here: https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html
+I just wanted a docker container with jupyter, python and aws-cli.
 
-### Start the notebook
+### Setup
 
-```shell
-docker run -p 8888:8888 -v "${PWD}":/home/jovyan/work jupyter/scipy-notebook:latest
+Make sure your aws creds are in the project root as an `.aws` folder.
+
 ```
+docker-compose up
+```
+
+NB: I'm running on one of these m1 macs so the Dockerfile is pulling down the ARM version of the aws-cli.
